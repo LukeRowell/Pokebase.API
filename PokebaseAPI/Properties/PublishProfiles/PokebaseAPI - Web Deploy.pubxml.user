@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA9bA/7GERUUGtByQNIr5regAAAAACAAAAAAAQZgAAAAEAACAAAABTVJOAmZ2VtVzd+eN4Z5daON6v4nokxsX9c1CpEY511gAAAAAOgAAAAAIAACAAAAD6FVhj7p8fArKbIRIfxAIGu6AiiZVSl2RVePaUpwlgL4AAAAA6OzXHS455mWHJBQhhZzQzEdijpRbPWbr5ykPjwSt5qnycjZ5RZbbsVH0OqU8ju4ybfJnKrDny/niBrHTn5O0JW4EN2YJqj0ATCUppBY6awHbYuNWq66wNhi+JLdkh7s8PbcskTrHBrO+7dxnuyebvB+++0zOE2k8ZhFbkAh6osEAAAAAkU9LNdSrLoxOCpDJRqN6FFrSPXtZpSZ0/pstSLur7EqUdjvMpRaqZ6cVAPPILRxXU51aeQRt+Qj0yNuhr+BEp</EncryptedPassword>
+    <History>True|2023-04-09T23:57:35.7704553Z;True|2023-04-09T19:54:02.6991676-04:00;True|2023-04-09T14:52:25.2981975-04:00;True|2023-04-09T14:02:21.7514220-04:00;True|2023-04-09T13:21:42.9855189-04:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:pokebaseapidbserver.database.windows.net,1433%3bInitial Catalog=PokebaseAPI_db%3bUser Id=BlueLobster%40pokebaseapidbserver%3bPassword=HolySunday77%3f</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="PokebaseAPI.Data.DataContext">
+      <Value>Data Source=tcp:pokebaseapidbserver.database.windows.net,1433%3bInitial Catalog=PokebaseAPI_db%3bUser Id=BlueLobster%40pokebaseapidbserver%3bPassword=HolySunday77%3f</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

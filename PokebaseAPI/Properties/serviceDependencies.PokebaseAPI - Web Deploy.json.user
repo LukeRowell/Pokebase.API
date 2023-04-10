@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "apis1": {
+      "restored": true,
+      "restoreTime": "2023-04-09T17:19:45.9580167Z"
+    },
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2023-04-09T17:51:33.0890968Z"
+    }
+  },
+  "parameters": {
+    "mssql1.subscriptionId": {
+      "Name": "mssql1.subscriptionId",
+      "Type": "subscription",
+      "Value": "e5270f83-f65d-40eb-a8e2-bd4ce2606cff"
+    },
+    "mssql1.resourceGroupName": {
+      "Name": "mssql1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "PokebaseAPI20230409131505ResourceGroup"
+    },
+    "apis1.resourceGroupName": {
+      "Name": "apis1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "PokebaseAPI20230409131505ResourceGroup"
+    },
+    "apis1.subscriptionId": {
+      "Name": "apis1.subscriptionId",
+      "Type": "subscription",
+      "Value": "e5270f83-f65d-40eb-a8e2-bd4ce2606cff"
+    }
+  }
+}
