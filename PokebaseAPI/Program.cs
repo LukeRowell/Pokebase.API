@@ -18,7 +18,8 @@ builder.Services.AddDbContext<DataContext>(options =>
 builder.Services.AddCors(options => options.AddPolicy(name: "PokemonOrigins",
     policy =>
     {
-        policy.WithOrigins("https://pokebase-app.azurewebsites.net").AllowAnyMethod().AllowAnyHeader();
+        //policy.WithOrigins("https://pokebase-app.azurewebsites.net").AllowAnyMethod().AllowAnyHeader();
+        policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
     }));
 
 var app = builder.Build();
