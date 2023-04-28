@@ -31,23 +31,18 @@ namespace PokebaseAPI.Controllers
                 }
             }
 
-            includedGens = includedGens.Remove(includedGens.Length - 2);
+            if (includedGens != "")
+            {
+                includedGens = includedGens.Remove(includedGens.Length - 2);
+            }
 
-            System.Console.WriteLine(includedGens);
-
-            if (type1 == "None" && type2 == "None") //if both types are None
+            if (type1 == "None" && type2 == "None" || includedGens == "") //if both types are None
             {
                 query = "SELECT * FROM Pokemon WHERE 1 = 2;";
             }
 
             else if (type1 == "Any" && type2 == "Any")  //if both types are Any
             {
-                /*
-                query = "SELECT * " +
-                        "FROM Pokemon " +
-                        "WHERE gen BETWEEN " + genFrom.ToString() + " AND " + genThru.ToString() + " " +
-                        "ORDER BY " + sortVal + " " + orderVal + ";";
-                */
                 query = "SELECT * " +
                         "FROM Pokemon " +
                         "WHERE gen IN (" + includedGens + ") " +
@@ -56,13 +51,6 @@ namespace PokebaseAPI.Controllers
 
             else if ((type1 == "Any" && type2 == "None") || (type1 == "None" && type2 == "Any"))    //if one type is Any and the other is None
             {
-                /*
-                query = "SELECT * " +
-                        "FROM Pokemon " +
-                        "WHERE (type1 is NULL OR type2 is NULL) " + 
-                        "AND gen BETWEEN " + genFrom.ToString() + " AND " + genThru.ToString() + " " +
-                        "ORDER BY " + sortVal + " " + orderVal + ";";
-                */
                 query = "SELECT * " +
                         "FROM Pokemon " +
                         "WHERE (type1 is NULL OR type2 is NULL) " +
@@ -73,13 +61,6 @@ namespace PokebaseAPI.Controllers
             else if ((type1 == "Any" && type2 != "None") || (type1 != "None" && type2 == "Any"))    //if one type is Any and the other is not None
             {
                 usableType = (type1 == "Any" ? type2 : type1);
-                /*
-                query = "SELECT * " +
-                        "FROM Pokemon " +
-                        "WHERE ((type1 = '" + usableType + "') OR (type2 = '" + usableType + "')) " +
-                        "AND gen BETWEEN " + genFrom.ToString() + " AND " + genThru.ToString() + " " +
-                        "ORDER BY " + sortVal + " " + orderVal + ";";
-                */
                 query = "SELECT * " +
                         "FROM Pokemon " +
                         "WHERE ((type1 = '" + usableType + "') OR (type2 = '" + usableType + "')) " +
@@ -90,13 +71,6 @@ namespace PokebaseAPI.Controllers
             else if ((type1 == "None" && type2 != "Any") || (type2 == "None" && type1 != "Any"))  //if one type is None and the other is specific
             {
                 usableType = (type1 == "None" ? type2 : type1);
-                /*
-                query = "SELECT * " +
-                        "FROM Pokemon " +
-                        "WHERE (type1 = '" + usableType + "' AND type2 IS NULL) " +
-                        "AND gen BETWEEN " + genFrom.ToString() + " AND " + genThru.ToString() + " " +
-                        "ORDER BY " + sortVal + " " + orderVal + ";";
-                */
                 query = "SELECT * " +
                         "FROM Pokemon " +
                         "WHERE (type1 = '" + usableType + "' AND type2 IS NULL) " +
@@ -106,13 +80,6 @@ namespace PokebaseAPI.Controllers
 
             else  //if both types are specified
             {
-                /*
-                query = "SELECT * " +
-                        "FROM Pokemon " +
-                        "WHERE ((type1 = '" + type1 + "' AND type2 = '" + type2 + "') OR (type1 = '" + type2 + "' AND type2 = '" + type1 + "'))" +
-                        "AND gen BETWEEN " + genFrom.ToString() + " AND " + genThru.ToString() + " " +
-                        "ORDER BY " + sortVal + " " + orderVal + ";";
-                */
                 query = "SELECT * " +
                         "FROM Pokemon " +
                         "WHERE ((type1 = '" + type1 + "' AND type2 = '" + type2 + "') OR (type1 = '" + type2 + "' AND type2 = '" + type1 + "'))" +
